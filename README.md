@@ -19,7 +19,7 @@
    <li>g- Em security escolhemos o WAF caso seja necessário e clicamos em create </li>
 </ul>
 
-#### 3- 🧩<b>AAgora vamos criar  função Lambda </b>
+#### 3- 🧩<b>Agora vamos criar  função Lambda </b>
 <ul>
       <li>a- Clicamos em Create Function </li>
       <li>b- Escolhemos o nome e a descrição  </li>
@@ -36,6 +36,5 @@
       </ul>
       </li>
     </ul>
-#### 4- Vamos criar o Application Load Balancer  
-
--
+    
+#### 5- Acessar o site  
