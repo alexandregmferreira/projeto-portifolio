@@ -18,8 +18,9 @@
     </ul></li>
    <li>g- Em security escolhemos o WAF caso seja necessário e clicamos em create </li>
 </ul>
+
 #### 3- 🧩<b>AAgora vamos criar  função Lambda </b>
-    <ul>
+<ul>
       <li>a- Clicamos em Create Function </li>
       <li>b- Escolhemos o nome e a descrição  </li>
       <li>c- Escolhemos o Runtime para Node </li>
