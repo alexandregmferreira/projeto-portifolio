@@ -17,7 +17,7 @@
     <li>c- Redirect HTTP to HTTPS </li>
     <ul> </li>
    <li>g- Em security escolhemos o WAF caso seja necessário e clicamos em create </li>
-</ul>
+    </ul>    
 #### 3- 🧩<b>AAgora vamos criar  função Lambda </b>
     <ul>
       <li>a- Clicamos em Create Function </li>
