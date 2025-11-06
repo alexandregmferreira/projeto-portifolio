@@ -1,52 +1,44 @@
-/**
+export const handler = async (event) => {
+  try {
+    const record = event?.Records?.[0];
+    const cf = record?.cf;
+    const request = cf?.request;
 
- * This is an AWS Lambda function created for demonstration purposes.
+    console.log('Lambda@Edge Triggered');
+    console.log('Full event:', JSON.stringify(event));
+    console.log('Request object:', JSON.stringify(request));
 
- * It retrieves static assets from a defined Amazon S3 bucket.
-
- * To make the content available through a URL, use an Application Load Balancer with a Lambda integration.
- * 
- * Set the S3_BUCKET environment variable in the Lambda function definition.
- */
-
-var AWS = require('aws-sdk');
-
-exports.handler = function(event, context, callback) {
-
-    var bucket = process.env.SEU_BUCKET;    
-    var key = event.path.replace('/', '');
-    
-    if (key == '') {
-        key = 'index.html';
+    // Se não houver request ou uri, redireciona para /index.html
+    if (!request || typeof request.uri !== 'string') {
+      console.log('URI ausente ou inválida. Redirecionando para /index.html');
+      return {
+        ...request,
+        uri: '/index.html',
+      };
     }
 
-    // Fetch from S3
-    var s3 = new AWS.S3();
-    return s3.getObject({Bucket: bucket, Key: key},
-       function(err, data) {
+    const uri = request.uri;
 
-            if (err) {
-                return err;
-            }
+    // Redireciona "/" para "/index.html"
+    if (uri === '/') {
+      request.uri = '/index.html';
+    }
 
-            var isBase64Encoded = false;
-            var encoding = 'utf8';
-            
-            if (data.ContentType.indexOf('image/') > -1) {
-                isBase64Encoded = true;
-                encoding = 'base64'
-            }
-    
-            var resp = {
-                statusCode: 200,
-                headers: {
-                    'Content-Type': data.ContentType,
-                },
-                body: new Buffer(data.Body).toString(encoding),
-                isBase64Encoded: isBase64Encoded
-            };
+    // Reescreve caminhos que não começam com "/Arquivos/"
+    else if (uri.length > 0 && uri.indexOf('/Arquivos/') !== 0) {
+      request.uri = `/Arquivos${uri}`;
+    }
 
-            callback(null, resp);
-        }
-    );
+    return request;
+  } catch (error) {
+    console.log('Erro na função Lambda@Edge:', error);
+
+    // Fallback seguro: retorna o request original com uri ajustado
+    return {
+      uri: '/index.html',
+      method: 'GET',
+      headers: {},
+      querystring: '',
+    };
+  }
 };
