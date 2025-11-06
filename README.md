@@ -33,8 +33,9 @@
         <li>d- Em Cache Behavior deixamos o "*" </li>
         <li>e- Em CloudFront Event deixamos o "Origin request" </li>
         <li>f- Confirme a replicação global e clique em "Deploy" </li>
+	<li>g- Após isso só acessar o site com o link do CloudFront </li>
       </ul>
       </li>
     </ul>
     
-#### 5- Acessar o site  
+#### 5- Diagrama
