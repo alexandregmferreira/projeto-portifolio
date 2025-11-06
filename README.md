@@ -2,5 +2,5 @@
 ### Projeto destinado a criação de uma pagina de apresentação de seus trabalhos e também a montagem da arquitetura na AWS.
 
 ## Entendendo o Projeto 
-### 📁 Pasta <a href="website">website</a> onde estão os arquivos HTML e também as imagens.
+### 📁 <a href="website">website</a> onde estão os arquivos HTML e também as imagens.
 
