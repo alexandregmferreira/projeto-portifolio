@@ -39,3 +39,5 @@
     </ul>
     
 #### 5- Diagrama
+<br/>
+<img src="diagrama.png" alt="diagrama" title="Diagrama">
