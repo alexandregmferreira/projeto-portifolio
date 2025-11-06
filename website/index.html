@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Alexandre Guimarães Martins Ferreira</title>
+  <!-- FontAwesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #0787c7;
+      --secondary: #f8fafc;
+      --dark: #232d3a;
+      --accent: #406986;
+      --light: #fff;
+      --radius: 14px;
+      --shadow: 0 8px 32px rgba(7,135,199,0.08);
+      --transition: .35s cubic-bezier(.7,0,.17,1);
+    }
+    body { margin:0; background:var(--secondary); font-family:'Segoe UI',Arial,sans-serif; color:var(--dark);}
+    header { background:var(--primary); position:fixed; width:100%; z-index:999; box-shadow:var(--shadow);}
+    .nav-container { display:flex; justify-content:space-between; align-items:center; padding: 16px 22px;}
+    .logo { color:var(--light); font-size:23px; font-weight:bold; letter-spacing:1.5px;}
+    .menu { display:flex; gap:16px; }
+    .menu a { color:var(--light); text-decoration:none; font-size:18px; padding:8px 2px; border-radius:8px; transition:background var(--transition);}
+    .menu a:hover, .menu a.active { background:rgba(255,255,255,0.12);}
+    .hamburger { display:none; flex-direction:column; cursor:pointer; }
+    .hamburger span { height:4px; width:29px; background:var(--light); margin:4px 0; border-radius:2px; transition:var(--transition);}
+    @media (max-width: 900px) {
+      .menu {display: none; flex-direction: column; background: var(--primary); position:absolute; top:62px; left:0; width:100%;}
+      .menu.active { display:flex;}
+      .hamburger { display:flex;}
+    }
+    main {padding-top:90px; max-width:1050px; margin:auto;}
+    section {padding:54px 20px 38px 20px; margin-bottom:15px; background:var(--light); border-radius:var(--radius); box-shadow:var(--shadow); margin-top:20px; opacity:0; transform:translateY(40px); animation: fadeIn .9s forwards;}
+    section:first-of-type {animation-delay:.1s;}
+    section:nth-of-type(2) {animation-delay:.25s;}
+    section:nth-of-type(3) {animation-delay:.35s;}
+    section:nth-of-type(4) {animation-delay:.5s;}
+    section:nth-of-type(5) {animation-delay:.6s;}
+    section:nth-of-type(6) {animation-delay:.7s;}
+    section:nth-of-type(7) {animation-delay:.8s;}
+    @keyframes fadeIn {
+      to {
+        opacity:1;
+        transform:none;
+      }
+    }
+    h1,h2 {color:var(--primary);}
+    h2 {margin-bottom:14px;}
+    .profile-img { width:126px; height:126px; object-fit:cover; border-radius:50%; box-shadow:0 4px 16px rgba(7,135,199,.13); margin-bottom:15px; border:3px solid var(--accent); animation: pulse 2.5s infinite;}
+    @keyframes pulse {
+      0%,100% { box-shadow:0 0 0 0 rgba(7,135,199,0.17);}
+      50% { box-shadow:0 0 0 12px rgba(7,135,199,0.06);}
+    }
+    .about-p { font-size:18px; margin-bottom:18px;}
+    .button { background: var(--primary); color:var(--light); border:none; border-radius:8px; padding:11px 26px; font-size:17px; cursor:pointer; font-weight:bold; transition: background var(--transition), transform .23s;}
+    .button:hover {background:var(--accent); transform:translateY(-2px) scale(1.05);}
+    .skills-list { display:flex; flex-wrap:wrap; gap:17px; margin-top:10px;}
+    .skills-box {background:var(--secondary); border-radius:10px; padding:14px 22px; box-shadow:0 2px 6px rgba(0,0,0,0.04); display:flex; align-items:center; gap:8px; font-weight:500; font-size:17px; color:var(--primary);}
+    .skills-box i { font-size:21px;}
+    .projects-links a {display:block; color:#0787c7; margin:7px 0; text-decoration:none; font-weight:600;  border-radius:6px; padding:3px 6px; transition:background var(--transition);}
+    .projects-links a:hover{background:rgba(7,135,199,0.09);}
+    .experience-block {margin-bottom:21px;}
+    .experience-company {font-weight:700; color:var(--accent);}
+    .experience-role {font-weight:600;}
+    .experience-date {font-size:15px; color: #4682A9; margin-bottom:4px;}
+    .badges {display:flex; flex-wrap:wrap; gap:17px; align-items:center; margin-top:10px;}
+    .badge-img {height:69px; border-radius:8px; box-shadow:0 2px 8px rgba(7,135,199,0.17); transition:transform .23s;}
+    .badge-img:hover {transform:scale(1.12) rotate(-5deg);}
+    .contact-info {font-size:18px;}
+    .contact-info i { width:28px; color:var(--primary);}
+    .contact-info a {color:var(--accent);}
+    html { scroll-behavior: smooth;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo"><i class="fa-solid fa-cloud"></i> Alexandre Guimarães Martins Ferreira</div>
+      <nav>
+        <div class="menu" id="menu">
+          <a href="#home">Início</a>
+          <a href="#about">Sobre</a>
+          <a href="#skills">Habilidades</a>
+          <!--<a href="#projects">Projetos</a> -->
+          <a href="#experience">Experiência</a>
+          <a href="#certifications">Certificações</a>
+          <a href="#contact">Contato</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" style="display:flex; flex-direction:column; align-items:center; text-align:center;">
+      <img src="Arquivos/alexandrefoto.png" alt="Foto de Alexandre Ferreira" class="profile-img">
+      <h1>Olá, eu sou Alexandre Guimarães Martins Ferreira</h1>
+      <h2>Cloud Analyst SR Multi-Cloud</h2>
+      <p>Profissional de TI com mais de 11 anos de experiência em ambientes corporativos e projetos complexos nas áreas de Field Support, Service Desk, Data Center e Cloud Computing.</p>
+    </section>
+
+    <section id="about">
+      <h2>Sobre</h2>
+      <p class="about-p">
+        Profissional de Tecnologia da Informação com mais de 11 anos de experiência, atuando em ambientes corporativos e projetos de alta complexidade nas áreas de Field Support, Service Desk e Cloud Computing.<br><br>
+        Minha trajetória começou em 2014, com suporte local de TI, evoluiu para Service Desk e atualmente trabalho com Multi-Cloud, sustentando grandes projetos como app Meu Vivo e IA Aura, além do serviço de e-mail Terra no Azure.<br><br>
+        Sou movido por desafios, apaixonado por tecnologia e comprometido com a evolução contínua. Valorizo o trabalho em equipe, a troca de conhecimento e a entrega de soluções que geram impacto real.
+      </p>
+      <a href="Arquivos/Curriculo Alexandre-novo.pdf" class="button" download><i class="fa-solid fa-download"></i> Baixar Currículo</a>
+    </section>
+
+    <section id="skills">
+      <h2>Habilidades</h2>
+      <div class="skills-list">
+        <div class="skills-box"><i class="fa-brands fa-linux"></i> Linux</div>
+        <div class="skills-box"><i class="fa-brands fa-docker"></i> Docker</div>
+        <div class="skills-box"><i class="fa-brands fa-kubernetes"></i> Kubernetes</div>
+        <div class="skills-box"><i class="fa-brands fa-aws"></i> AWS</div>
+        <div class="skills-box"><i class="fa-brands fa-microsoft"></i> Azure</div>
+        <div class="skills-box"><i class="fa-solid fa-shield-halved"></i> Fortinet</div>
+        <div class="skills-box"><i class="fa-solid fa-cloud"></i> Huawei Cloud</div>
+        <div class="skills-box"><i class="fa-solid fa-eye"></i> Dynatrace Observability</div>
+        <!--<div class="skills-box"><i class="fa-brands fa-python"></i> Python</div> -->
+        <!--<div class="skills-box"><i class="fa-solid fa-terminal"></i> Unix/Shell</div> -->
+        <div class="skills-box"><i class="fa-solid fa-database"></i> Oracle Cloud</div>
+        <div class="skills-box"><i class="fa-solid fa-chart-line"></i> Zabbix/Grafana/ELK</div>
+        <!--<div class="skills-box"><i class="fa-solid fa-code-branch"></i> Git/Jenkins/CI-CD</div> -->
+      </div>
+    </section>
+
+    <!--<section id="projects">
+      <h2>Projetos</h2>
+      <div class="projects-links">
+        <a href="https://github.com/seuusuario/projeto-nuvem" target="_blank"><i class="fa-brands fa-github"></i> Migração Multi-Cloud com Terraform</a>
+        <a href="https://github.com/seuusuario/monitoramento-cloud" target="_blank"><i class="fa-brands fa-github"></i> Automação de Monitoramento com Python</a>
+        <a href="https://meuwebapp.cloud" target="_blank"><i class="fa-solid fa-globe"></i> Web Dashboard - Gestão de Incidentes</a>
+        Adicione mais projetos e links reais 
+      </div>
+    </section> -->
+
+    <section id="experience">
+      <h2>Experiência Profissional</h2>
+      <div class="experience-block">
+        <span class="experience-company">Telefónica Tech</span>
+        <div class="experience-role">Cloud Analyst SR</div>
+        <div class="experience-date">jul/2023 - atual | Barueri-SP | Híbrido</div>
+        <div>Atuação em projetos multi-cloud, sustentação de serviços críticos como app Meu Vivo, IA Aura e e-mail Terra (Azure, Kubernetes); análise de logs, troubleshooting, monitoramento (Dynatrace, Zabbix, Grafana, ELK).</div>
+      </div>
+      <div class="experience-block">
+        <span class="experience-company">Telefónica Tech</span>
+        <div class="experience-role">Cloud Analyst PL</div>
+        <div class="experience-date">fev/2022 - jul/2023 | São Paulo-SP</div>
+        <div>Sustentação de aplicações em Azure, automação, integrações e suporte a equipes de desenvolvimento.</div>
+      </div>
+      <div class="experience-block">
+        <span class="experience-company">Telefônica Tech</span>
+        <div class="experience-role">Analista Suporte Data Center Jr</div>
+        <div class="experience-date">out/2019 - fev/2022 | São Paulo-SP</div>
+        <div>Suporte N1/N2, ativação de serviços Microsoft 365, migração de emails, suporte Azure e Huawei Cloud.</div>
+      </div>
+      <div class="experience-block">
+        <span class="experience-company">Econocom Brasil</span>
+        <div class="experience-role">Analista de Helpdesk</div>
+        <div class="experience-date">ago/2014 - out/2019 | São Paulo-SP</div>
+        <div>Atendimento field support e service desk, manutenção e configuração de TI corporativo, suporte a sistemas Totvs, Oracle, Peoplesoft.</div>
+      </div>
+
+    </section>
+
+    <section id="certifications">
+      <h2>Certificações</h2>
+      <p>Clique nos badges para visualizar os dados de certificação detalhados!</p>
+      <div class="badges">
+        <a href="https://www.credly.com/badges/746a0807-e55b-4549-b07a-66ec30cece91/public_url" target="_blank"><img class="badge-img" src="Arquivos/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" title="AWS Certified Cloud Practitioner"></a>
+        <a href="https://www.credly.com/badges/c10cbe7e-fed8-42db-ae87-0acc14e7c2d6/public_url" target="_blank"><img class="badge-img" src="Arquivos/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner" title="AWS Certified AI Practitioner"></a>
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=6EDF22777F9D62B3391FE18F55FA0F17BE6C4032C035F7363A51BB5BFFDA1A19" target="_blank"><img class="badge-img" src="Arquivos/Oracle Multi Cloud Architect.png" alt="Oracle Multicloud Architect" title="Oracle Multicloud Architect"></a>
+        <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=781905E7C65B02F21293F3E80FC4AB76BE355C795D49A1F5C81D51D5B38B83DA" target="_blank"><img class="badge-img" src="Arquivos/Oracle-Cloud-Infrastructure.png" alt="Oracle Cloud Infrastructure 2025" title="Oracle Cloud Infrastructure 2025"></a>
+        <a href="https://www.credly.com/badges/7dc181ba-5dbf-4fd8-bed6-cc47fef2bc32/public_url" target="_blank"><img class="badge-img" src="Arquivos/fortinet-certified-fundamentals-cybersecurity.png" alt="Fortinet Fundamentals" title="FCF - Fundamentals"></a>     
+        <a href="Arquivos/Huawei Cloud.pdf" target="_blank"><img class="badge-img" src="Arquivos/Huawei-Cloud-HCIA.png" alt="Huawei Cloud Cloud Services" title="Huawei Cloud - HCIA"></a>     
+        <a href="https://learn.microsoft.com/en-us/users/alexandreguimaraesferreira-3346/credentials/9ee716979a71ab8a?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank"><img class="badge-img" src="Arquivos/Azure-Virtual-Desktop-Speciality.png" alt="Azure AZ-140" title="AZ-140"></a>
+        <a href="https://learn.microsoft.com/api/credentials/share/pt-br/AlexandreGuimaraesFerreira-3346/CCE7B57C907D8396?sharingId=90AE82510DD099C" target="_blank"><img class="badge-img" src="Arquivos/Azure-Administrator-Associate.png" alt="Azure AZ-104" title="AZ-104"></a>
+        <a href="https://learn.microsoft.com/api/credentials/share/pt-br/AlexandreGuimaraesFerreira-3346/AFC4114EAC4A3382?sharingId=90AE82510DD099C" target="_blank"><img class="badge-img" src="Arquivos/-900.png" alt="Azure AI-900 " title="AI-900"></a>
+        <a href="https://learn.microsoft.com/api/credentials/share/pt-br/AlexandreGuimaraesFerreira-3346/746320F6638EC6E4?sharingId=90AE82510DD099C" target="_blank"><img class="badge-img" src="Arquivos/-900.png" alt="Azure AZ-900" title="AZ-900"></a>
+        <a href="https://learn.microsoft.com/api/credentials/share/pt-br/AlexandreGuimaraesFerreira-3346/52D83D971D1D9989?sharingId=90AE82510DD099C" target="_blank"><img class="badge-img" src="Arquivos/-900.png" alt="Azure SC-900" title="SC-900"></a>
+        <a href="https://learn.microsoft.com/api/credentials/share/pt-br/AlexandreGuimaraesFerreira-3346/8E26A9CAD1835617?sharingId=90AE82510DD099C" target="_blank"><img class="badge-img" src="Arquivos/-900.png" alt="Azure DP-900" title="DP-900"></a>
+        <a href="https://learn.microsoft.com/api/credentials/share/pt-br/AlexandreGuimaraesFerreira-3346/A82EDC0D117EE575?sharingId=90AE82510DD099C" target="_blank"><img class="badge-img" src="Arquivos/-900.png" alt="Azure MS-900" title="MS-900"></a>
+        <a href="Arquivos/MCT Certificate.pdf" target="_blank"><img class="badge-img" src="Arquivos/Microsoft Cetified Trainer.png" alt="Microsoft Certified Trainer" title="Microsoft Certified Trainer"></a>
+        <!-- Adicione outros badges conforme necessário -->
+      </div>
+    </section>
+    
+
+<section id="contact">
+  <h2>Contato</h2>
+  <div class="contact-info">
+    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:alexandre.gmferreira@gmail.com">alexandre.gmferreira@gmail.com</a></p>
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+5511999999999">(11) 1197722-4423</a></p>
+    <p><i class="fa-solid fa-location-dot"></i> São Paulo - SP, Brasil</p>
+    <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/alexandre-guimar%C3%A3es-martins-ferreira-3a2985106/" target="_blank">LinkedIn</a></p>
+    <p><i class="fa-brands fa-github"></i> <a href="https://github.com/alexandregmferreira" target="_blank">GitHub</a></p>
+  </div>
+</section>
+
+  </main>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    });
+    const sections = document.querySelectorAll("main > section");
+    const navLinks = document.querySelectorAll(".menu a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(sec => {
+        const secTop = sec.offsetTop - 120;
+        const secHeight = sec.offsetHeight;
+        if (pageYOffset >= secTop && pageYOffset < secTop + secHeight) {
+          current = sec.getAttribute("id");
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
